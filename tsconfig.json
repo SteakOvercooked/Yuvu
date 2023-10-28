@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
-    "noEmit": true,
-    "module": "ES2022",
-    "target": "ES2022",
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
     "jsx": "react-jsx",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "outDir": "dist"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

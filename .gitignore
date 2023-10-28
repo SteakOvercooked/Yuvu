@@ -1,1 +1,7 @@
 node_modules
+
+# VS Code workspace settings
+.vscode
+
+# build folder
+dist

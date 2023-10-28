@@ -1,30 +1,29 @@
 module.exports = {
   root: true,
-  extends: [
-    "eslint:recommended",
-    "prettier",
-  ],
+  extends: ['eslint:recommended', 'prettier'],
   rules: {
-    "no-trailing-spaces": 2,
+    'no-trailing-spaces': 2,
   },
   parserOptions: {
-    ecmaVersion: "latest",
+    ecmaVersion: 'latest',
   },
+  ignorePatterns: ['dist/**/*'],
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
-      plugins: ["@typescript-eslint"],
-      parser: "@typescript-eslint/parser",
+      files: ['*.ts', '*.tsx'],
+      plugins: ['@typescript-eslint'],
+      parser: '@typescript-eslint/parser',
       extends: [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:react/jsx-runtime',
       ],
       env: {
         browser: true,
       },
     },
     {
-      files: ["*.js"],
+      files: ['*.js'],
       env: {
         node: true,
       },
