@@ -1,17 +1,22 @@
-export type Result<V, E> = { err: false; value: V } | { err: true; value: E };
+export type Result<TValue, TError> =
+  | { err: false; result: TValue }
+  | { err: true; result: TError };
 
-export type Controller<V, E> = {
-  ok: (value: V) => void;
-  err: (error: E) => void;
+export type Controller<TValue, TError> = {
+  ok: (value: TValue) => void;
+  err: (error: TError) => void;
 };
 
-export type Thenable<V, E> = {
-  then: <R>(
-    onDone: ((result: Result<V, E>) => R | PromiseLike<R>) | null | undefined
-  ) => Promise<R>;
+export type Thenable<TValue, TError> = {
+  then: <TReturn>(
+    onDone:
+      | ((result: Result<TValue, TError>) => TReturn | PromiseLike<TReturn>)
+      | null
+      | undefined
+  ) => Promise<TReturn>;
 };
 
-export type Future<V, E> = {
-  controller: Controller<V, E>;
-  thenable: Thenable<V, E>;
+export type Future<TValue, TError> = {
+  controller: Controller<TValue, TError>;
+  thenable: Thenable<TValue, TError>;
 };
