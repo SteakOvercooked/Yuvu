@@ -17,7 +17,7 @@ const config = {
     clean: true,
   },
   resolve: {
-    modules: [path.resolve(ROOT, 'src'), 'node_modules'],
+    modules: [path.resolve(ROOT, 'src'), path.resolve(ROOT, 'node_modules')],
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
     alias: {
       react: path.resolve(ROOT, 'node_modules/react'),

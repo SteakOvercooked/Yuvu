@@ -21,6 +21,9 @@ module.exports = {
       env: {
         browser: true,
       },
+      rules: {
+        '@typescript-eslint/no-explicit-any': 0, // there is no way to specify a generic callback argument that works with an unknown type without any
+      },
     },
     {
       files: ['*.js'],
